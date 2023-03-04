@@ -3,13 +3,14 @@ import Card from './Card';
 
 const SeachBar = () => {
     const [query, setQuery] = useState("");
-    const [data, setData] = useState("");
+    const [data, setData] = useState([]);
 
     const focusQuery = useRef(null);
     useEffect(() => focusQuery.current.focus(),[])
     async function handleQuery(e){
         e.preventDefault()
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${query}&page=1&include_adult=true`;
+        // const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${query}&page=1&include_adult=true`;
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=5c360663826a9c762675a1df82bfbad3&language=en-US&query=${query}&page=1&include_adult=true`;
         // const query = "jurassic park";
         try{
             const res = await fetch(url);
